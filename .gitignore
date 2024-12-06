@@ -5,6 +5,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+vol_mysql/
 ### STS ###
 .apt_generated
 .classpath
