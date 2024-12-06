@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hanul.myinfra.MyinfraApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-05T09:24:44" hostname="HANUL-PC" time="0.395">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.hanul.myinfra.MyinfraApplicationTests" time="0.395"/>
+  <system-out><![CDATA[18:24:41.043 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hanul.myinfra.MyinfraApplicationTests]: MyinfraApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:24:41.184 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hanul.myinfra.MyinfraApplication for test class com.hanul.myinfra.MyinfraApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.0)
+
+2024-12-05T18:24:41.528+09:00  INFO 16960 --- [myinfra] [    Test worker] c.hanul.myinfra.MyinfraApplicationTests  : Starting MyinfraApplicationTests using Java 17.0.13 with PID 16960 (started by HanulChoi in C:\Users\HanulChoi\Desktop\study\docker\myinfra)
+2024-12-05T18:24:41.528+09:00  INFO 16960 --- [myinfra] [    Test worker] c.hanul.myinfra.MyinfraApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-12-05T18:24:42.043+09:00  INFO 16960 --- [myinfra] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-05T18:24:42.089+09:00  INFO 16960 --- [myinfra] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2024-12-05T18:24:42.436+09:00  INFO 16960 --- [myinfra] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-05T18:24:42.515+09:00  INFO 16960 --- [myinfra] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-05T18:24:42.547+09:00  INFO 16960 --- [myinfra] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-05T18:24:42.829+09:00  INFO 16960 --- [myinfra] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-05T18:24:42.861+09:00  INFO 16960 --- [myinfra] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-05T18:24:43.081+09:00  INFO 16960 --- [myinfra] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49d543a9
+2024-12-05T18:24:43.097+09:00  INFO 16960 --- [myinfra] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-05T18:24:43.160+09:00  INFO 16960 --- [myinfra] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-05T18:24:43.847+09:00  INFO 16960 --- [myinfra] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-05T18:24:43.882+09:00  INFO 16960 --- [myinfra] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-05T18:24:44.181+09:00  WARN 16960 --- [myinfra] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-05T18:24:44.197+09:00  INFO 16960 --- [myinfra] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-12-05T18:24:44.510+09:00  INFO 16960 --- [myinfra] [    Test worker] c.hanul.myinfra.MyinfraApplicationTests  : Started MyinfraApplicationTests in 3.183 seconds (process running for 4.276)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
