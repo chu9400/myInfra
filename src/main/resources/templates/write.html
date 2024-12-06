@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index_Page</title>
+    <link href="/main.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div th:replace="~{nav.html :: navbar}"></div>
+
+    <main class="form-container">
+        <h2>상품 추가</h2>
+        <form action="/add" method="POST">
+            <label for="title">상품명</label>
+            <input type="text" id="title" name="title" required placeholder="상품명">
+
+            <label for="price">가격</label>
+            <input type="text" id="price" name="price" required placeholder="가격">
+            <button type="submit" class="btn secondary-btn form-btn">추가 버튼</button>
+        </form>
+    </main>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - MyInfra</title>
+    <link href="/main.css" rel="stylesheet" />
+</head>
+<body>
+<!-- 에러 페이지 컨테이너 -->
+<div class="error-container">
+    <h2>Oops! Something went wrong.</h2>
+    <p><strong>Status Code:</strong> <span th:text="${status}">500</span></p>
+    <p><strong>Error:</strong> <span th:text="${error}">Internal Server Error</span></p>
+    <p><strong>Path:</strong> <span th:text="${path}">/example-path</span></p>
+    <a href="/" class="btn primary-btn">메인으로 돌아가기</a>
+</div>
+</body>
+</html>

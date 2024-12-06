@@ -1,0 +1,41 @@
+networks:
+  frontend_net:
+  backend_net_01:
+  backend_net_02:
+
+services:
+  mysql-container:
+    image: mysql:8.0.40
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: qwer1234
+      MYSQL_USER: newuser
+      MYSQL_PASSWORD: qwer1234
+    networks:
+      - backend_net_02
+    volumes:
+      - ./vol_mysql:/var/lib/mysql  # volume bind mount
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # db init
+
+  spring-boot-container:
+    build: . # docker img build pass code
+    container_name: spring-boot-container
+    depends_on:
+      - mysql-container
+    networks:
+      - backend_net_01
+      - backend_net_02
+
+  nginx-container:
+    image: img_nginx_server:v1
+    container_name: nginx-container
+    restart: always
+    depends_on:
+      - spring-boot-container
+    ports:
+      - "80:80"
+    networks:
+      - frontend_net
+      - backend_net_01
+    stop_grace_period: 1s  # off command after 1s Shutdown
