@@ -17,18 +17,24 @@ services:
     volumes:
       - ./vol_mysql:/var/lib/mysql  # volume bind mount
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # db init
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
 
   spring-boot-container:
     build: . # docker img build pass code
     container_name: spring-boot-container
     depends_on:
-      - mysql-container
+      mysql-container:
+        condition: service_healthy
     networks:
       - backend_net_01
       - backend_net_02
 
   nginx-container:
-    image: img_nginx_server:v1
+    image: img_nginx:v1
     container_name: nginx-container
     restart: always
     depends_on:
