@@ -1,5 +1,6 @@
 # MyInfra 프로젝트
 이 프로젝트는 Docker 기반의 컨테이너 환경에서 네트워크 설계 및 통신을 학습하기 위해 설계되었습니다.
+
 가상 환경에서 서버 간의 통신 흐름을 시뮬레이션하여 인프라 설계와 운영에 대한 실무 경험을 쌓는 것을 목표로 합니다. 
 
 <hr />
@@ -66,7 +67,7 @@
   - ```docker compose up --build```
 
 -  브라우저에서 http://localhost:80으로 접속하여 애플리케이션이 정상적으로 작동하는지 확인합니다.
-  - ![homepage.png](readme_img%2Fhomepage.png)
+![homepage.png](readme_img%2Fhomepage.png)
 
 
 <hr />
