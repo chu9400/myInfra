@@ -4,23 +4,16 @@ networks:
 
 services:
   mysql-container:
-    image: mysql:8.0.40
+    image: custom-mysql:v1
     container_name: mysql-container
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: qwer1234
-      MYSQL_USER: newuser
-      MYSQL_PASSWORD: qwer1234
     networks:
       - db_network
-    volumes:
-      - ./vol_mysql:/var/lib/mysql  # volume bind mount
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # db init
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 5s
-      timeout: 10s
-      retries: 3
+      interval: 10s
+      retries: 5
+
 
   spring-boot-container:
     build: . # docker img build pass code
@@ -31,6 +24,7 @@ services:
     networks:
       - app_network
       - db_network
+
 
   nginx-container:
     image: img_nginx:v1

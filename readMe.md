@@ -53,18 +53,19 @@
 ### 2. 프로젝트 실행
 - GitHub에서 프로젝트를 다운로드하여 압축을 풉니다.
 - 터미널에서 프로젝트 폴더로 이동합니다.
-  - 이미지 빌드:
-    - mysql
-      - ```shell
-        docker pull mysql:8.0.40
-        ```
+- 아래 명령어로 mysql과 nginx 이미지를 빌드 합니다. 
+  - mysql
+    - ```shell
+      docker build -t custom-mysql:v1 ./mysql
+      ```
 
-    - Nginx
-      - ```shell
-        docker build -t img_nginx:v1 ./nginx
-        ```
+  - Nginx
+    - ```shell
+      docker build -t img_nginx:v1 ./nginx
+      ```
 - Docker Compose로 컨테이너 실행:
   - ```docker compose up --build```
+
 
 -  브라우저에서 http://localhost:80으로 접속하여 애플리케이션이 정상적으로 작동하는지 확인합니다.
 ![homepage.png](readme_img%2Fhomepage.png)
