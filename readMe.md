@@ -67,14 +67,20 @@
     - ```shell
       docker build -t img_nginx:v1 ./nginx
       ```
-- Docker Compose로 컨테이너 실행:
+- Docker Compose로 컨테이너 실행(10초 내외)
   - ```docker compose up --build```
 
+<br />
 
 -  브라우저에서 http://localhost:80으로 접속하여 애플리케이션이 정상적으로 작동하는지 확인합니다.
 ![homepage.png](readme_img%2Fhomepage.png)
 
-
+<br /><br />
+   
+- 확인이 완료되었다면, 터미널에서 아래의 명령어를 입력하여 컨테이너를 종료합니다.
+  - ```shell
+      docker compose down
+      ```
 <hr />
 
 ## 프로젝트 구조 및 설명
