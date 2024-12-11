@@ -2,7 +2,7 @@
 
 - 이 프로젝트는 Docker 기반의 컨테이너 환경에서 네트워크 설계와 서버 간 통신을 학습하기 위해 설계되었습니다.
 
-- 실제 환경을 가상화하여 서버 통신 흐름을 시뮬레이션하며, 인프라 설계 및 운영에 대한 실무적인 경험을 쌓는 것을 목표로 합니다.
+- 실제 환경을 가상화하여 L2 스위칭, L3 라우팅, NAT와 같은 네트워크 개념을 시뮬레이션하며, 인프라 설계 및 운영에 대한 실무적인 경험을 쌓는 것을 목표로 합니다.
 
 <hr />
 
@@ -11,15 +11,17 @@
 ## 프로젝트 설계도
   ![myinfra.jpg](readme_img%2Fmyinfra.jpg)
 
-- 외부 요청이 Host PC의 80번 포트로 전달됩니다.
+- 외부 요청은 NAT를 통해 Host PC의 공용 IP에서 Docker 컨테이너의 Nginx(80번 포트)로 전달됩니다.
 
-- Nginx 컨테이너는 이를 app_network를 통해 Spring Boot 웹 서버(8080번 포트)로 프록시합니다.
+- Nginx 컨테이너는 app_network라는 브리지 네트워크(L2 스위칭)를 통해 Spring Boot 웹 서버(8080번 포트)로 요청을 프록시합니다.
 
 - Spring Boot 서버는 db_network를 통해 MySQL 데이터베이스(3306번 포트)와 통신합니다.
 
-- MySQL은 요청 데이터를 처리한 뒤 결과를 Spring Boot로 반환합니다.
+- db_network는 Docker의 L2 스위칭을 활용하며, 웹 서버와 DB 서버 간의 데이터를 처리합니다.
 
-- Spring Boot는 최종 응답을 Nginx로 전달하며, Nginx는 이를 클라이언트에게 반환합니다.
+- 웹 서버는 Docker의 L3 라우팅 기능을 통해 app_network와 db_network를 연결하여 다른 네트워크 간의 통신을 수행합니다.
+
+- 최종적으로 MySQL에서 처리된 데이터는 Spring Boot 웹 서버로 반환되며, Nginx가 이를 클라이언트에게 전달합니다.
 
 
 <hr />
